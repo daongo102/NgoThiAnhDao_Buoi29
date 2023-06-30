@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    color: #171717;
+
+}
+
+.container-fluid {
+    background: linear-gradient(to right, #fbedd4, #cfb383);
+}
+
+.main__header {
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.main .main__body {
+    background: #fdfcfa;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bodyleft a{
+    color: #171717;
+    padding: 12px;
+    display: block;    
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.nav-pills .nav-link.active {
+    background-color:#feefd0;
+    color: #f09555;
+    font-weight: 500;
+}
+
+
+.bodyright {
+    width: 85%;
+}
+
+.bodyright__info,
+.bodyright__table {
+    background: #fff2ec;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.bodyright__table {
+    margin-top: 20px;
+}
