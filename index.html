@@ -92,6 +92,7 @@
                         id="maSinhVien"
                         placeholder="Mã sinh viên"
                       />
+                      <span id="spanMaSV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-8">
                       <input
@@ -100,6 +101,7 @@
                         id="nameSinhVien"
                         placeholder="Họ tên"
                       />
+                      <span id="spanNameSV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -108,6 +110,7 @@
                         id="emailSinhVien"
                         placeholder="Email"
                       />
+                      <span id="spanEmailSV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-8">
                       <input
@@ -116,6 +119,7 @@
                         id="addressSinhVien"
                         placeholder="Địa chỉ"
                       />
+                      <span id="spanAddressSV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -124,6 +128,7 @@
                         id="diemToan"
                         placeholder="Điểm toán"
                       />
+                      <span id="spanToan" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -132,6 +137,7 @@
                         id="diemLy"
                         placeholder="Điểm lý"
                       />
+                      <span id="spanLy" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -140,29 +146,25 @@
                         id="diemHoa"
                         placeholder="Điểm hóa"
                       />
+                      <span id="spanHoa" style="color: red; font-size: 10px;"></span>
                     </div>
                   </div>
-                  <button
-                    id="themSV"
-                    type="submit"
-                    class="btn btn-success btnThemSV"
-                  >
-                    THÊM
-                  </button>
-                  <button
-                    id="capNhatSV"
-                    type="submit"
-                    class="btn btn-success btnCapNhatSV"
-                  >
-                    CẬP NHẬT
-                  </button>
-                  <button
-                    id="resetSV"
-                    type="submit"
-                    class="btn btn-success btnResetSV"
-                  >
-                    RESET
-                  </button>
+                  <div class="text-center">
+                    <button
+                      id="themSV"
+                      type="submit"
+                      class="btn btn-success mx-2 btnThemSV"
+                    >
+                      THÊM
+                    </button>
+                    <button
+                      id="capNhatSV"
+                      type="submit"
+                      class="btn btn-success mx-2 btnCapNhatSV"
+                    >
+                      CẬP NHẬT
+                    </button>                
+                  </div>
                   <table
                     class="table table-bordered mt-3 text-center"
                     id="danhsachSV"
@@ -197,6 +199,7 @@
                         id="maGiangVien"
                         placeholder="Mã giảng viên"
                       />
+                      <span id="spanMaGV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-8">
                       <input
@@ -205,6 +208,7 @@
                         id="nameGiangVien"
                         placeholder="Họ tên giảng viên"
                       />
+                      <span id="spanNameGV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -213,6 +217,7 @@
                         id="emailGiangVien"
                         placeholder="Email"
                       />
+                      <span id="spanEmailGV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-8">
                       <input
@@ -221,6 +226,7 @@
                         id="addressGiangVien"
                         placeholder="Địa chỉ"
                       />
+                      <span id="spanAddressGV" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -229,6 +235,7 @@
                         id="workingDay"
                         placeholder="Số ngày làm việc"
                       />
+                      <span id="spanDay" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -237,29 +244,32 @@
                         id="salary1Day"
                         placeholder="Lương theo ngày"
                       />
+                      <span id="spanLuong" style="color: red; font-size: 10px;"></span>
                     </div>
                   </div>
-                  <button
-                    id="themGV"
-                    type="submit"
-                    class="btn btn-success btnThemGV"
-                  >
-                    THÊM
-                  </button>
-                  <button
-                    id="capNhatGV"
-                    type="submit"
-                    class="btn btn-success btnCapNhatGV"
-                  >
-                    CẬP NHẬT
-                  </button>
-                  <button
-                    id="resetGV"
-                    type="submit"
-                    class="btn btn-success btnResetGV"
-                  >
-                    RESET
-                  </button>
+                  <div class="text-center">
+                    <button
+                      id="themGV"
+                      type="submit"
+                      class="btn btn-success mx-2 btnThemGV"
+                    >
+                      THÊM
+                    </button>
+                    <button
+                      id="capNhatGV"
+                      type="submit"
+                      class="btn btn-success mx-2 btnCapNhatGV"
+                    >
+                      CẬP NHẬT
+                    </button>
+                    <!-- <button
+                      id="resetGV"
+                      type="submit"
+                      class="btn btn-secondary mx-2 btnResetGV"
+                    >
+                      RESET
+                    </button> -->
+                  </div>
                   <table
                     class="table table-bordered mt-3 text-center"
                     id="danhsachGV"
@@ -294,6 +304,7 @@
                         id="maKhachHang"
                         placeholder="Mã khách hàng"
                       />
+                      <span id="spanMaKH" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-8">
                       <input
@@ -302,6 +313,7 @@
                         id="nameKhachHang"
                         placeholder="Họ tên"
                       />
+                      <span id="spanNameKH" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -310,6 +322,7 @@
                         id="emailKhachHang"
                         placeholder="Email"
                       />
+                      <span id="spanEmailKH" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-8">
                       <input
@@ -318,6 +331,7 @@
                         id="addressKhachHang"
                         placeholder="Địa chỉ"
                       />
+                      <span id="spanAddressKH" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -326,6 +340,7 @@
                         id="nameCongTy"
                         placeholder="Tên công ty"
                       />
+                      <span id="spanTenCty" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -334,6 +349,7 @@
                         id="tienHoaDon"
                         placeholder="Trị giá hóa đơn"
                       />
+                      <span id="spanHDon" style="color: red; font-size: 10px;"></span>
                     </div>
                     <div class="form-group col-4">
                       <input
@@ -342,29 +358,32 @@
                         id="danhGia"
                         placeholder="Đánh giá"
                       />
+                      <span id="spanDanhGia" style="color: red; font-size: 10px;"></span>
                     </div>
                   </div>
-                  <button
-                    id="themCus"
-                    type="submit"
-                    class="btn btn-success btnThemCus"
-                  >
-                    THÊM
-                  </button>
-                  <button
-                    id="capNhatCus"
-                    type="submit"
-                    class="btn btn-success btnCapNhatCus"
-                  >
-                    CẬP NHẬT
-                  </button>
-                  <button
-                    id="resetCus"
-                    type="submit"
-                    class="btn btn-success btnResetCus"
-                  >
-                    RESET
-                  </button>
+                  <div class="text-center">
+                    <button
+                      id="themKH"
+                      type="submit"
+                      class="btn btn-success mx-2 btnThemKH"
+                    >
+                      THÊM
+                    </button>
+                    <button
+                      id="capNhatKH"
+                      type="submit"
+                      class="btn btn-success mx-2 btnCapNhatKH"
+                    >
+                      CẬP NHẬT
+                    </button>
+                    <!-- <button
+                      id="resetKH"
+                      type="submit"
+                      class="btn btn-secondary mx-2 btnResetKH"
+                    >
+                      RESET
+                    </button> -->
+                  </div>
                   <table
                     class="table table-bordered mt-3 text-center"
                     id="danhsachKH"
@@ -484,6 +503,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/danhsachperson.js"></script>
+    <script type="module" src="./js/student.js"></script>
+    <script type="module" src="./js/employee.js"></script>
+    <script type="module" src="./js/customer.js"></script>
   </body>
 </html>

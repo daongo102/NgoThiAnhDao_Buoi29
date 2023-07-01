@@ -1,9 +1,9 @@
 export class Person{
-    constructor(name, address, ma, email){
-        this.name = name;
-        this.address = address;
-        this.ma = ma;
-        this.email = email;
+    constructor(ma, name, email,address){
+        this.maPs = ma;
+        this.namePs = name;        
+        this.emailPs = email;
+        this.addressPs = address;
     }
     
 }
