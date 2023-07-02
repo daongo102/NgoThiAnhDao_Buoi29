@@ -98,8 +98,8 @@ getID("themGV").addEventListener("click", (themGV) => {
   let tenGV = getID("nameGiangVien").value;
   let emailGV = getID("emailGiangVien").value;
   let addressGV = getID("addressGiangVien").value;
-  let soNgayLam = +getID("workingDay").value;
-  let luongNgay = +getID("salary1Day").value;
+  let soNgayLam = getID("workingDay").value;
+  let luongNgay = getID("salary1Day").value;
 
   let isValid = true;
 
@@ -177,8 +177,8 @@ getID("themGV").addEventListener("click", (themGV) => {
 
   if (isValid) {
     let gv = new Employee(
-      soNgayLam,
-      luongNgay,
+      Number(soNgayLam),
+      Number(luongNgay),
       maGV,
       tenGV,
       emailGV,
@@ -253,8 +253,8 @@ getID("capNhatGV").addEventListener("click", (capNhatGV) => {
   let tenGV = getID("nameGiangVien").value;
   let emailGV = getID("emailGiangVien").value;
   let addressGV = getID("addressGiangVien").value;
-  let soNgayLam = +getID("workingDay").value;
-  let luongNgay = +getID("salary1Day").value;
+  let soNgayLam = getID("workingDay").value;
+  let luongNgay = getID("salary1Day").value;
 
   let isValid = true;
 
@@ -326,8 +326,8 @@ getID("capNhatGV").addEventListener("click", (capNhatGV) => {
 
   if (isValid) {
     let gv = new Employee(
-      soNgayLam,
-      luongNgay,
+      Number(soNgayLam),
+      Number(luongNgay),
       maGV,
       tenGV,
       emailGV,

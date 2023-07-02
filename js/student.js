@@ -101,9 +101,9 @@ getID("themSV").addEventListener("click", (themSV) => {
   let tenSV = getID("nameSinhVien").value;
   let emailSV = getID("emailSinhVien").value;
   let addressSV = getID("addressSinhVien").value;
-  let toan = +getID("diemToan").value;
-  let ly = +getID("diemLy").value;
-  let hoa = +getID("diemHoa").value;
+  let toan = getID("diemToan").value;
+  let ly = getID("diemLy").value;
+  let hoa = getID("diemHoa").value;
 
   let isValid = true;
 
@@ -154,26 +154,38 @@ getID("themSV").addEventListener("click", (themSV) => {
   );
 
   //! Điểm
-  isValid &= validation.checkScore(
+  isValid &= validation.checkEmpty(
+    toan,
+    "spanToan",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm không được để trống!</span>`
+  ) && validation.checkScore(
     toan,
     "spanToan",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm phải từ 0 đến 10!</span>`
   );
 
-  isValid &= validation.checkScore(
+  isValid &= validation.checkEmpty(
+    ly,
+    "spanLy",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm không được để trống!</span>`
+  ) && validation.checkScore(
     ly,
     "spanLy",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm phải từ 0 đến 10!</span>`
   );
 
-  isValid &= validation.checkScore(
+  isValid &= validation.checkEmpty(
+    hoa,
+    "spanHoa",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm không được để trống!</span>`
+  ) && validation.checkScore(
     hoa,
     "spanHoa",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm phải từ 0 đến 10!</span>`
   );
 
   if (isValid) {
-    let sv = new Student(toan, ly, hoa, maSV, tenSV, emailSV, addressSV);
+    let sv = new Student(Number(toan), Number(ly), Number(hoa), maSV, tenSV, emailSV, addressSV);
     sv.tinhDTB();
     sv.getDetail();
 
@@ -241,9 +253,9 @@ getID("capNhatSV").addEventListener("click", (capNhatSV) => {
   let tenSV = getID("nameSinhVien").value;
   let emailSV = getID("emailSinhVien").value;
   let addressSV = getID("addressSinhVien").value;
-  let toan = +getID("diemToan").value;
-  let ly = +getID("diemLy").value;
-  let hoa = +getID("diemHoa").value;
+  let toan = getID("diemToan").value;
+  let ly = getID("diemLy").value;
+  let hoa = getID("diemHoa").value;
 
   let isValid = true;
 
@@ -288,26 +300,38 @@ getID("capNhatSV").addEventListener("click", (capNhatSV) => {
   );
 
   //! Điểm
-  isValid &= validation.checkScore(
+  isValid &= validation.checkEmpty(
+    toan,
+    "spanToan",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm không được để trống!</span>`
+  ) && validation.checkScore(
     toan,
     "spanToan",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm phải từ 0 đến 10!</span>`
   );
 
-  isValid &= validation.checkScore(
+  isValid &= validation.checkEmpty(
+    ly,
+    "spanLy",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm không được để trống!</span>`
+  ) && validation.checkScore(
     ly,
     "spanLy",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm phải từ 0 đến 10!</span>`
   );
 
-  isValid &= validation.checkScore(
+  isValid &= validation.checkEmpty(
+    hoa,
+    "spanHoa",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm không được để trống!</span>`
+  ) && validation.checkScore(
     hoa,
     "spanHoa",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Điểm phải từ 0 đến 10!</span>`
   );
 
   if (isValid) {
-    let sv = new Student(toan, ly, hoa, maSV, tenSV, emailSV, addressSV);
+    let sv = new Student(Number(toan), Number(ly), Number(hoa), maSV, tenSV, emailSV, addressSV);
     sv.tinhDTB();
     sv.getDetail();
 
