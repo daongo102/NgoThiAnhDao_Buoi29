@@ -102,7 +102,7 @@ getID("themKH").addEventListener("click", (themKH) => {
   let emailKH = getID("emailKhachHang").value;
   let addressKH = getID("addressKhachHang").value;
   let tenCty = getID("nameCongTy").value;
-  let triGiaHD = +getID("tienHoaDon").value;
+  let triGiaHD = getID("tienHoaDon").value;
   let danhGiaKH = getID("danhGia").value;
 
   let isValid = true;
@@ -160,7 +160,7 @@ getID("themKH").addEventListener("click", (themKH) => {
       "spanTenCty",
       `<span><i class="fa-solid fa-circle-exclamation"></i> Tên công ty không được để trống!</span>`
     ) &&
-    validation.checkNameCompany(
+    validation.checkStr(
       tenCty,
       "spanTenCty",
       `<span><i class="fa-solid fa-circle-exclamation"></i> Tên công ty không được chứa các ký tự đặc biệt!</span>`
@@ -173,17 +173,21 @@ getID("themKH").addEventListener("click", (themKH) => {
       "spanHDon",
       `<span><i class="fa-solid fa-circle-exclamation"></i> Trị giá hóa đơn không được để trống!</span>`
     ) &&
-    validation.checkHD(
+    validation.checkBill(
       triGiaHD,
       "spanHDon",
-      `<span><i class="fa-solid fa-circle-exclamation"></i> Trị giá hóa đơn lớn hơn 0 và không chứa ký tự đặc biệt</span>`
+      `<span><i class="fa-solid fa-circle-exclamation"></i> Trị giá hóa đơn lớn hơn 0 và không chứa các ký tự đặc biệt</span>`
     );
 
-  //! Đánh giá
-  isValid &= validation.checkEmpty(
+   //! Đánh giá
+   isValid &= validation.checkEmpty(
     danhGiaKH,
     "spanDanhGia",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Đánh giá không được để trống!</span>`
+  ) && validation.checkStr(
+    danhGiaKH,
+    "spanDanhGia",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Đánh giá không được chứa các ký tự đặc biệt!</span>`
   );
 
   if (isValid) {
@@ -252,7 +256,12 @@ window.xemKH = function (ma) {
     getID("spanAddressKH").style.display = "none";
     getID("nameCongTy").value = khFind.tenCompany;
     getID("spanTenCty").style.display = "none";
-    getID("tienHoaDon").value = khFind.triGiaHD;
+ 
+    var checkHD = khFind.triGiaHD.split("");
+    var checkHD1 = checkHD.slice(0,checkHD.length-2);
+    var checkHD2 = checkHD1.join("").split(".").join("");
+    getID("tienHoaDon").value = checkHD2;
+    
     getID("spanHDon").style.display = "none";
     getID("danhGia").value = khFind.danhGia;
     getID("spanDanhGia").style.display = "none";
@@ -265,7 +274,7 @@ getID("capNhatKH").addEventListener("click", (capNhatKH) => {
   let emailKH = getID("emailKhachHang").value;
   let addressKH = getID("addressKhachHang").value;
   let tenCty = getID("nameCongTy").value;
-  let triGiaHD = +getID("tienHoaDon").value;
+  let triGiaHD = getID("tienHoaDon").value;
   let danhGiaKH = getID("danhGia").value;
 
   let isValid = true;
@@ -317,7 +326,7 @@ getID("capNhatKH").addEventListener("click", (capNhatKH) => {
       "spanTenCty",
       `<span><i class="fa-solid fa-circle-exclamation"></i> Tên công ty không được để trống!</span>`
     ) &&
-    validation.checkNameCompany(
+    validation.checkStr(
       tenCty,
       "spanTenCty",
       `<span><i class="fa-solid fa-circle-exclamation"></i> Tên công ty không được chứa các ký tự đặc biệt!</span>`
@@ -330,10 +339,10 @@ getID("capNhatKH").addEventListener("click", (capNhatKH) => {
       "spanHDon",
       `<span><i class="fa-solid fa-circle-exclamation"></i> Trị giá hóa đơn không được để trống!</span>`
     ) &&
-    validation.checkHD(
+    validation.checkBill(
       triGiaHD,
       "spanHDon",
-      `<span><i class="fa-solid fa-circle-exclamation"></i> Trị giá hóa đơn lớn hơn 0</span>`
+      `<span><i class="fa-solid fa-circle-exclamation"></i> Trị giá hóa đơn lớn hơn 0 và không chứa các ký tự đặc biệt</span>`
     );
 
   //! Đánh giá
@@ -341,6 +350,10 @@ getID("capNhatKH").addEventListener("click", (capNhatKH) => {
     danhGiaKH,
     "spanDanhGia",
     `<span><i class="fa-solid fa-circle-exclamation"></i> Đánh giá không được để trống!</span>`
+  ) && validation.checkStr(
+    danhGiaKH,
+    "spanDanhGia",
+    `<span><i class="fa-solid fa-circle-exclamation"></i> Đánh giá không được chứa các ký tự đặc biệt!</span>`
   );
 
   if (isValid) {
