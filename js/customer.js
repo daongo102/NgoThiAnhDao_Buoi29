@@ -243,12 +243,19 @@ window.xemKH = function (ma) {
  
     getID("maKhachHang").value = khFind.maPs;
     getID("maKhachHang").disabled = true;
+    getID("spanMaKH").style.display = "none";
     getID("nameKhachHang").value = khFind.namePs;
+    getID("spanNameKH").style.display = "none";
     getID("emailKhachHang").value = khFind.emailPs;
+    getID("spanEmailKH").style.display = "none";
     getID("addressKhachHang").value = khFind.addressPs;
+    getID("spanAddressKH").style.display = "none";
     getID("nameCongTy").value = khFind.tenCompany;
+    getID("spanTenCty").style.display = "none";
     getID("tienHoaDon").value = khFind.triGiaHD;
+    getID("spanHDon").style.display = "none";
     getID("danhGia").value = khFind.danhGia;
+    getID("spanDanhGia").style.display = "none";
   }
 };
 

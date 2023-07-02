@@ -234,11 +234,17 @@ window.xemGV = function (ma) {
 
     getID("maGiangVien").value = gvFind.maPs;
     getID("maGiangVien").disabled = true;
+    getID("spanMaGV").style.display = "none";
     getID("nameGiangVien").value = gvFind.namePs;
+    getID("spanNameGV").style.display = "none";
     getID("emailGiangVien").value = gvFind.emailPs;
+    getID("spanEmailGV").style.display = "none";
     getID("addressGiangVien").value = gvFind.addressPs;
+    getID("spanAddressGV").style.display = "none";
     getID("workingDay").value = gvFind.soNgayLam;
+    getID("spanDay").style.display = "none";
     getID("salary1Day").value = gvFind.luongNgay;
+    getID("spanLuong").style.display = "none";
   }
 };
 

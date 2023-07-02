@@ -223,13 +223,17 @@ window.xemSV = function (ma) {
 
     getID("maSinhVien").value = svFind.maPs;
     getID("maSinhVien").disabled = true;
+    getID("spanMaSV").style.display = "none";
     getID("nameSinhVien").value = svFind.namePs;
+    getID("spanNameSV").style.display = "none";
     getID("emailSinhVien").value = svFind.emailPs;
+    getID("spanEmailSV").style.display = "none";
     getID("addressSinhVien").value = svFind.addressPs;
+    getID("spanAddressSV").style.display = "none";
     getID("diemToan").value = svFind.diemToan;
     getID("diemLy").value = svFind.diemLy;
     getID("diemHoa").value = svFind.diemHoa;
-  }
+  } 
 };
 
 getID("capNhatSV").addEventListener("click", (capNhatSV) => {
