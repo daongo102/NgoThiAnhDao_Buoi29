@@ -17,12 +17,12 @@ class Student extends Person {
     this.diemTB = ((this.diemToan + this.diemLy + this.diemHoa) / 3).toFixed(2);
     return this.diemTB;
   }
-  getDetail(){
+  getDetail() {
     this.chiTiet = `
     - Toán: ${this.diemToan} <br>
     - Lý: ${this.diemLy} <br>
-    - Hóa: ${this.diemHoa}`;  
-    return this.chiTiet;  
+    - Hóa: ${this.diemHoa}`;
+    return this.chiTiet;
   }
 }
 
@@ -36,6 +36,52 @@ const validation = new Validation();
 const getID = (id) => {
   return document.getElementById(id);
 };
+
+
+window.sortGDS = function () {
+  let dspsCopy = [];
+  for (let i = 0; i < dsps.mangPerson.length; i++) {
+    dspsCopy.push(dsps.mangPerson[i]);
+  }
+  dspsCopy.sort(function (p1, p2) {
+    let a = p1.namePs.split(" ").pop().toUpperCase();
+    let b = p2.namePs.split(" ").pop().toUpperCase();   
+    if (a === b) {
+      return 0;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return -1;
+    
+  });
+
+  hienThiSV(dspsCopy);
+}
+getID("sortGiamSV").onclick = sortGDS;
+
+window.sortTDS = function () {
+  let dspsCopy = [];
+  for (let i = 0; i < dsps.mangPerson.length; i++) {
+    dspsCopy.push(dsps.mangPerson[i]);
+  }
+  dspsCopy.sort(function (p1, p2) {
+    let a = p1.namePs.split(" ").pop().toUpperCase();
+    let b = p2.namePs.split(" ").pop().toUpperCase();   
+    if (a === b) {
+      return 0;
+    }
+    if (a > b) {
+      return -1;
+    }
+    return 1;
+    
+  });
+
+  hienThiSV(dspsCopy);
+}
+getID("sortTangSV").onclick = sortTDS;
+
 
 function setLocalStorage() {
   localStorage.setItem("DSSV", JSON.stringify(dsps.mangPerson));
@@ -130,7 +176,7 @@ getID("themSV").addEventListener("click", (themSV) => {
     let sv = new Student(toan, ly, hoa, maSV, tenSV, emailSV, addressSV);
     sv.tinhDTB();
     sv.getDetail();
-  
+
     dsps.themPerson(sv);
     setLocalStorage();
     hienThiSV(dsps.mangPerson);
@@ -174,7 +220,7 @@ window.xemSV = function (ma) {
   let indexFind = dsps.timIndex(ma);
   if (indexFind > -1) {
     let svFind = dsps.mangPerson[indexFind];
-   
+
     getID("maSinhVien").value = svFind.maPs;
     getID("maSinhVien").disabled = true;
     getID("nameSinhVien").value = svFind.namePs;

@@ -1,5 +1,3 @@
-// import { Person } from "./person.js";
-
 function ListPerson() {
   this.mangPerson = [];
   this.themPerson = function (ps) {

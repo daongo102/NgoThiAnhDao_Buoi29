@@ -173,9 +173,13 @@
                       <tr>
                         <th>Mã SV</th>
                         <th class="nowrap">
-                          <span>Họ tên</span>
-                          <!-- <i class="fa fa-arrow-up" id="SapXepTang"></i>
-                          <i class="fa fa-arrow-down" id="SapXepGiam"></i> -->
+                          <span>Họ tên</span> <br>                         
+                          <button class="badge badge-light">
+                            <i class="fa fa-arrow-down" id="sortGiamSV"></i>
+                          </button> 
+                          <button class="badge badge-light">
+                            <i class="fa fa-arrow-up" id="sortTangSV"></i>
+                          </button>                         
                         </th>
                         <th>Email</th>
                         <th>Địa chỉ</th>
@@ -264,14 +268,7 @@
                       class="btn btn-success mx-2 btnCapNhatGV"
                     >
                       CẬP NHẬT
-                    </button>
-                    <!-- <button
-                      id="resetGV"
-                      type="submit"
-                      class="btn btn-secondary mx-2 btnResetGV"
-                    >
-                      RESET
-                    </button> -->
+                    </button>                  
                   </div>
                   <table
                     class="table table-bordered mt-3 text-center"
@@ -280,10 +277,14 @@
                     <thead class="text-primary">
                       <tr>
                         <th>Mã GV</th>
-                        <th class="nowrap">
-                          <span>Họ tên</span>
-                          <!-- <i class="fa fa-arrow-up" id="SapXepTang"></i>
-                          <i class="fa fa-arrow-down" id="SapXepGiam"></i> -->
+                        <th class="nowrap">                                            
+                          <span>Họ tên</span> <br>                         
+                          <button class="badge badge-light">
+                            <i class="fa fa-arrow-down" id="sortGiamGV"></i>
+                          </button> 
+                          <button class="badge badge-light">
+                            <i class="fa fa-arrow-up" id="sortTangGV"></i>
+                          </button>          
                         </th>
                         <th>Email</th>
                         <th>Địa chỉ</th>
@@ -381,14 +382,7 @@
                       class="btn btn-success mx-2 btnCapNhatKH"
                     >
                       CẬP NHẬT
-                    </button>
-                    <!-- <button
-                      id="resetKH"
-                      type="submit"
-                      class="btn btn-secondary mx-2 btnResetKH"
-                    >
-                      RESET
-                    </button> -->
+                    </button>                  
                   </div>
                   <table
                     class="table table-bordered mt-3 text-center"
@@ -397,10 +391,14 @@
                     <thead class="text-primary">
                       <tr>
                         <th>Mã<br>KH</th>
-                        <th class="nowrap">
-                          <span>Họ tên</span>
-                          <!-- <i class="fa fa-arrow-up" id="SapXepTang"></i>
-                          <i class="fa fa-arrow-down" id="SapXepGiam"></i> -->
+                        <th class="nowrap">                         
+                          <span>Họ tên</span> <br>                         
+                          <button class="badge badge-light">
+                            <i class="fa fa-arrow-down" id="sortGiamKH"></i>
+                          </button> 
+                          <button class="badge badge-light">
+                            <i class="fa fa-arrow-up" id="sortTangKH"></i>
+                          </button>          
                         </th>                       
                         <th>Email</th>
                         <th>Địa chỉ</th>
@@ -413,87 +411,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- <div class="row">
-                    <div class="col-4 ">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
-                                    aria-orientation="vertical">
-                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#student"
-                                        role="tab" aria-controls="v-pills-home" aria-selected="true">Sinh Viên</a>
-                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#employee" role="tab"
-                                        aria-controls="v-pills-profile" aria-selected="false">Giảng Viên</a>
-                                    <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#customer" role="tab"
-                                        aria-controls="v-pills-messages" aria-selected="false">Khách Hàng</a>
-                                </div>
-                            </div>
-                            <div class="col-8 border p-3">
-                                <div class="tab-content" id="v-pills-tabContent">
-                                    <div class="tab-pane fade show active" id="student" role="tabpanel"
-                                        aria-labelledby="v-pills-home-tab">
-                                        <p>Diện Tích = a <span style="vertical-align: super;">2</span> </p>
-                                        <div class="form-group">                                   
-                                            <input type="text" class="form-control" id="side" placeholder="Nhập a (side)">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="studentX" placeholder="Nhập SizeX">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="studentY" placeholder="Nhập SizeY">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="studentColor"
-                                                placeholder="Nhập background color">
-                                        </div>
-                                        <button id="areastudent" type="submit" class="btn btn-primary">Tính</button>
-                                    </div>
-                                    <div class="tab-pane fade" id="employee" role="tabpanel"
-                                        aria-labelledby="v-pills-profile-tab">
-                                        <p>Diện Tích = wl</p>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="recL" placeholder="Nhập l (length)">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="recW" placeholder="Nhập w (width)">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="recX" placeholder="Nhập SizeX">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="recY" placeholder="Nhập SizeY">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="recColor"
-                                                placeholder="Nhập background color">
-                                        </div>
-                                        <button id="areaRec" type="submit" class="btn btn-primary">Tính</button>
-                                    </div>
-                                    <div class="tab-pane fade" id="customer" role="tabpanel"
-                                        aria-labelledby="v-pills-messages-tab">
-                                        <p>Diện Tích = πr<span style="vertical-align: super;">2</span> </p>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="radius" placeholder="Nhập r (radius)">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="cirX" placeholder="Nhập SizeX">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="cirY" placeholder="Nhập SizeY">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" id="cirColor"
-                                                placeholder="Nhập background color">
-                                        </div>
-                                        <button id="areacustomer" type="submit" class="btn btn-primary">Tính</button>
-                                    </div>
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="main" class="col-8 border p-3"></div>
-                </div> -->
+          </div>          
         </div>
       </div>
     </div>

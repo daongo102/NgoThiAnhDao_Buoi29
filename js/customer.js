@@ -37,6 +37,52 @@ const VND = new Intl.NumberFormat("vi-VN", {
   currency: "VND",
 });
 
+window.sortGDS = function () {
+  let dspsCopy = [];
+  for (let i = 0; i < dsps.mangPerson.length; i++) {
+    dspsCopy.push(dsps.mangPerson[i]);
+  }
+  dspsCopy.sort(function (p1, p2) {
+    let a = p1.namePs.split(" ").pop().toUpperCase();
+    let b = p2.namePs.split(" ").pop().toUpperCase();   
+    if (a === b) {
+      return 0;
+    }
+    if (a > b) {
+      return 1;
+    }
+    return -1;
+    
+  });
+
+  hienThiKH(dspsCopy);
+}
+getID("sortGiamKH").onclick = sortGDS;
+
+
+window.sortTDS = function () {
+  let dspsCopy = [];
+  for (let i = 0; i < dsps.mangPerson.length; i++) {
+    dspsCopy.push(dsps.mangPerson[i]);
+  }
+  dspsCopy.sort(function (p1, p2) {
+    let a = p1.namePs.split(" ").pop().toUpperCase();
+    let b = p2.namePs.split(" ").pop().toUpperCase();   
+    if (a === b) {
+      return 0;
+    }
+    if (a > b) {
+      return -1;
+    }
+    return 1;
+    
+  });
+
+  hienThiKH(dspsCopy);
+}
+getID("sortTangKH").onclick = sortTDS;
+
+
 function setLocalStorage() {
   localStorage.setItem("DSKH", JSON.stringify(dsps.mangPerson));
 }

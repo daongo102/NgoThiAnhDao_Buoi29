@@ -62,3 +62,26 @@ table {
     vertical-align: 0;
 }
 
+.badge-light{
+    border-color: transparent;
+    color: #fff;
+    background-color: #007bff;  
+    font-size: 9px;
+    transition: all 0.2s;
+}
+
+.badge-light:hover{
+    background-color: #007bff;
+    border-color: transparent;
+    color: #171717;
+}
+
+.badge-light:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.badge-light:not(:disabled):not(.disabled):active:focus{
+    box-shadow: none;
+}
+
