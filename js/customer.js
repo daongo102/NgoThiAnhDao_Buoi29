@@ -240,7 +240,7 @@ window.xemKH = function (ma) {
   let indexFind = dsps.timIndex(ma);
   if (indexFind > -1) {
     let khFind = dsps.mangPerson[indexFind];
-    // console.log(khFind);
+ 
     getID("maKhachHang").value = khFind.maPs;
     getID("maKhachHang").disabled = true;
     getID("nameKhachHang").value = khFind.namePs;
@@ -248,10 +248,6 @@ window.xemKH = function (ma) {
     getID("addressKhachHang").value = khFind.addressPs;
     getID("nameCongTy").value = khFind.tenCompany;
     getID("tienHoaDon").value = khFind.triGiaHD;
-    // let tien = khFind.triGiaHD;
-    // let tienCN = tien.split('.',' ','₫').join(''); 
-    // console.log(tienCN)  
-    // getID("tienHoaDon").value = tienCN;
     getID("danhGia").value = khFind.danhGia;
   }
 };
@@ -374,4 +370,9 @@ function resetForm() {
   getID("danhGia").value = "";
 }
 
+getID("searchNameKH").onkeyup = function () {
+  let tuTim = getID("searchNameKH").value;
+  let mangTK = dsps.timKiemTheoTen(tuTim);
+  hienThiKH(mangTK);
+}
 // export {Employee};

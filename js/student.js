@@ -330,4 +330,10 @@ function resetForm() {
   getID("diemHoa").value = "";
 }
 
+getID("searchNameSV").onkeyup = function () {
+  let tuTim = getID("searchNameSV").value;
+  let mangTK = dsps.timKiemTheoTen(tuTim);
+  hienThiSV(mangTK);
+}
+
 // export {Student};

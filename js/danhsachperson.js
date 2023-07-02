@@ -27,4 +27,20 @@ function ListPerson() {
   };
 }
 
+ListPerson.prototype.timKiemTheoTen = function (tuTim) {
+  let mangTK = [];
+  let tuTimThuong = tuTim.toLowerCase();
+  let tuTimReplace = tuTimThuong.replace(/\s/g, "");
+  this.mangPerson.map(function (ps, index) {
+      let tenThuong = ps.namePs.toLowerCase();
+      let tenReplace = tenThuong.replace(/\s/g, "");
+
+      let result = tenReplace.indexOf(tuTimReplace);
+      if (result > -1) {
+          mangTK.push(ps);
+      }
+  });
+  return mangTK;
+}
+
 export { ListPerson };

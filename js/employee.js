@@ -351,4 +351,10 @@ function resetForm() {
   getID("salary1Day").value = "";
 }
 
+getID("searchNameGV").onkeyup = function () {
+  let tuTim = getID("searchNameGV").value;
+  let mangTK = dsps.timKiemTheoTen(tuTim);
+  hienThiGV(mangTK);
+}
+
 // export {Employee};
