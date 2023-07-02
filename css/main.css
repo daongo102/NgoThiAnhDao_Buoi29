@@ -47,12 +47,18 @@ body {
 }
 
 .bodyright__info,
-.bodyright__table {
+table {
     background: #fff2ec;
     border-radius: 10px;
     padding: 20px;
 }
 
-.bodyright__table {
-    margin-top: 20px;
+.bodyright .bodyright__info table {
+    margin-top: 50px;
+    font-size: 13px;
 }
+
+.table td{
+    vertical-align: 0;
+}
+

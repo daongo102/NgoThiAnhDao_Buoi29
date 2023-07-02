@@ -12,12 +12,10 @@ function ListPerson() {
         indexFind = index;
       }
     });
-    console.log(indexFind);
     return indexFind;
   };
   this.xoaPerson = function (ma) {
-    let index = this.timIndex(ma);
-    console.log(index);
+    let index = this.timIndex(ma);  
     if (index > -1) {
       this.mangPerson.splice(index, 1);
     }

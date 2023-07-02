@@ -4,17 +4,23 @@ import { Validation } from "./validation.js";
 
 //===================================================//===================================================
 
+const VND = new Intl.NumberFormat('vi-VN', {
+  style: 'currency',
+  currency: 'VND',
+});
+
 class Employee extends Person {
   constructor(soNgayLam, luongNgay, ...restPerson) {
     super(...restPerson);
     this.soNgayLam = soNgayLam;
     this.luongNgay = luongNgay;
-    this.luongThang = 0;
+    this.luongThang = 0;    
   }
   tinhLuong() {
-    this.luongThang = this.luongNgay * this.soNgayLam;
+    let tongLuong = this.luongNgay * this.soNgayLam;    
+    this.luongThang = VND.format(tongLuong);
     return this.luongThang;
-  }
+  } 
 }
 
 //===================================================//===================================================
@@ -110,7 +116,7 @@ getID("themGV").addEventListener("click", (themGV) => {
       `<span><i class="fa-solid fa-circle-exclamation"></i> Lương theo ngày từ 100.000 đến 500.000</span>`
     );
 
-  //! Giờ làm
+  //! Ngày làm
   isValid &=
     validation.checkEmpty(
       soNgayLam,
@@ -133,7 +139,7 @@ getID("themGV").addEventListener("click", (themGV) => {
       addressGV
     );
     gv.tinhLuong();
-    // console.log(gv);
+  
     dsps.themPerson(gv);
     setLocalStorage();
     hienThiGV(dsps.mangPerson);
@@ -149,11 +155,20 @@ function hienThiGV(mang) {
               <td>${ps.maPs}</td>
               <td>${ps.namePs}</td>
               <td>${ps.emailPs}</td>
-              <td>${ps.luongThang}</td>
+              <td style="text-align: left;">${ps.addressPs}</td>
+              <td>${ps.soNgayLam}</td>
+              <td>${ps.luongNgay}</td>
+              <td style="font-weight:600;">${ps.luongThang}</td>
               <td>
-                  <button onclick="xemGV('${ps.maPs}')" class="btn btn-info">Xem</button>
-                  <button onclick="xoaGV('${ps.maPs}')" class="btn btn-danger">Xóa</button>   
-              </td>                 
+              <div class="row flex-column">
+                <div class="col-12 my-1">
+                  <button onclick="xemGV('${ps.maPs}')" style="font-size:10px;" class="btn btn-info ">Xem</button>
+                </div>
+                <div class="col-12 my-1">
+                  <button onclick="xoaGV('${ps.maPs}')" style="font-size:10px;"  class="btn btn-danger ">Xóa</button>  
+                </div>
+              </div>                          
+            </td>                   
           </tr>`;
   });
 
@@ -170,7 +185,7 @@ window.xemGV = function (ma) {
   let indexFind = dsps.timIndex(ma);
   if (indexFind > -1) {
     let gvFind = dsps.mangPerson[indexFind];
-    console.log(gvFind);
+
     getID("maGiangVien").value = gvFind.maPs;
     getID("maGiangVien").disabled = true;
     getID("nameGiangVien").value = gvFind.namePs;
@@ -244,7 +259,7 @@ getID("capNhatGV").addEventListener("click", (capNhatGV) => {
       "Lương theo ngày từ 100.000 đến 500.000"
     );
 
-  //! Giờ làm
+  //! Ngày làm
   isValid &=
     validation.checkEmpty(
       soNgayLam,
@@ -266,7 +281,7 @@ getID("capNhatGV").addEventListener("click", (capNhatGV) => {
       emailGV,
       addressGV
     );
-    gv.tinhLuong();
+    gv.tinhLuong();  
 
     let result = dsps.capNhatPerson(gv);
     if (result) {

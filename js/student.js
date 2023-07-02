@@ -11,10 +11,18 @@ class Student extends Person {
     this.diemHoa = diemHoa;
     this.diemLy = diemLy;
     this.diemTB = 0;
+    this.chiTiet = "";
   }
   tinhDTB() {
-    this.diemTB = (this.diemToan + this.diemLy + this.diemHoa) / 3;
+    this.diemTB = ((this.diemToan + this.diemLy + this.diemHoa) / 3).toFixed(2);
     return this.diemTB;
+  }
+  getDetail(){
+    this.chiTiet = `
+    - Toán: ${this.diemToan} <br>
+    - Lý: ${this.diemLy} <br>
+    - Hóa: ${this.diemHoa}`;  
+    return this.chiTiet;  
   }
 }
 
@@ -121,7 +129,8 @@ getID("themSV").addEventListener("click", (themSV) => {
   if (isValid) {
     let sv = new Student(toan, ly, hoa, maSV, tenSV, emailSV, addressSV);
     sv.tinhDTB();
-    //   console.log(sv);
+    sv.getDetail();
+  
     dsps.themPerson(sv);
     setLocalStorage();
     hienThiSV(dsps.mangPerson);
@@ -137,10 +146,18 @@ function hienThiSV(mang) {
               <td>${ps.maPs}</td>
               <td>${ps.namePs}</td>
               <td>${ps.emailPs}</td>
-              <td>${ps.diemTB}</td>
+              <td style="text-align: left;">${ps.addressPs}</td>
+              <td style="text-align: left;">${ps.chiTiet}</td>
+              <td style="font-weight:600;">${ps.diemTB}</td>
               <td>
-                  <button onclick="xemSV('${ps.maPs}')" class="btn btn-info">Xem</button>
-                  <button onclick="xoaSV('${ps.maPs}')" class="btn btn-danger">Xóa</button>   
+                <div class="row flex-column">
+                  <div class="col-12 my-1">
+                    <button onclick="xemSV('${ps.maPs}')" style="font-size:10px;" class="btn btn-info ">Xem</button>
+                  </div>
+                  <div class="col-12 my-1">
+                    <button onclick="xoaSV('${ps.maPs}')" style="font-size:10px;"  class="btn btn-danger ">Xóa</button>  
+                  </div>
+                </div>                          
               </td>                 
           </tr>`;
   });
@@ -157,7 +174,7 @@ window.xemSV = function (ma) {
   let indexFind = dsps.timIndex(ma);
   if (indexFind > -1) {
     let svFind = dsps.mangPerson[indexFind];
-    // console.log(svFind);
+   
     getID("maSinhVien").value = svFind.maPs;
     getID("maSinhVien").disabled = true;
     getID("nameSinhVien").value = svFind.namePs;
@@ -242,6 +259,7 @@ getID("capNhatSV").addEventListener("click", (capNhatSV) => {
   if (isValid) {
     let sv = new Student(toan, ly, hoa, maSV, tenSV, emailSV, addressSV);
     sv.tinhDTB();
+    sv.getDetail();
 
     let result = dsps.capNhatPerson(sv);
     if (result) {

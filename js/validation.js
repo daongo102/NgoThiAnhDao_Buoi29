@@ -102,8 +102,46 @@ function Validation() {
     return false;
   };  
 
+  this.checkNameCompany = function (value, spanID, message) {
+    var pattern =
+      /^[0-9 a-z A-Z_ÀÁÂÃÈÉÊẾÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹý\\s]+$/;
+
+    if (pattern.test(value)) {
+      getID(spanID).innerHTML = "";
+      getID(spanID).style.display = "none";
+      return true;
+    }
+    getID(spanID).innerHTML = message;
+    getID(spanID).style.display = "block";
+    return false;
+  };
+
   this.checkHD = function (value, spanID, message) {
     if (value > 0) {
+      getID(spanID).innerHTML = "";
+      getID(spanID).style.display = "none";
+      return true;
+    }
+    getID(spanID).innerHTML = message;
+    getID(spanID).style.display = "block";
+    return false;
+  };
+
+  this.checkTienThem = function (value, spanID, message) {
+    var pattern = /[0-9]$/;
+    if (pattern.test(value) && value >= 0 && value <= 10) {
+      getID(spanID).innerHTML = "";
+      getID(spanID).style.display = "none";
+      return true;
+    }
+    getID(spanID).innerHTML = message;
+    getID(spanID).style.display = "block";
+    return false;
+  };
+
+  this.checkTienCN = function (value, spanID, message) {
+    var pattern = /[0-9]/;
+    if (pattern.test(value)) {
       getID(spanID).innerHTML = "";
       getID(spanID).style.display = "none";
       return true;
